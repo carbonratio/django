@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List of Users here!</h1>
+    {% if userlist %}
+    <div class="usertable">
+        <ol>        
+            {% for u in userlist %}
+            <li>User info:
+                <ul>
+                    <li>First Name: {{ u.first_name }}</li>
+                    <li>Last Name: {{ u.last_name }}</li>
+                    <li>Email: {{ u.email }}</li>
+                </ul>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+    {% else %}
+    <p>NO USERS FOUND!</p>
+    {% endif %}
+</body>
+</html>

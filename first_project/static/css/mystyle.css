@@ -1,3 +1,7 @@
-h1 {
-    color: #a00f0f;
+h1{
+    color: green;
+}
+
+table,th,td{
+    border: 2px solid rgb(61, 17, 182)
 }

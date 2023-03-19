@@ -10,6 +10,27 @@
 </head>
 <body>
     <h1>Static Image!</h1>
-    <img src='{% static "images/smiley.jpg" %}' alt="Problem">
+    <img src='{% static "images/smiley.jpg" %}' alt="Problem" height="10" width="10">
+    <h1>Hi Welcome to Django Level Two</h1>
+    <h2>here are your access records:</h2>
+
+    <div class="djangotwo">
+        {% if access_records %}
+        <table>
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+            {% for acc in access_records %}
+            <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>NO ACCESS RECORDS FOUND!</p>
+        {% endif %}
+    </div>
 </body>
 </html>
